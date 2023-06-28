@@ -18,3 +18,5 @@ pip install -e .
 
 cd src/analysis/orca
 g++ -O2 -std=c++11 orca orca.cpp
+
+pip install wandb
