@@ -28,7 +28,8 @@ from diffusion_model import LiftedDenoisingDiffusion
 from diffusion_model_discrete import DiscreteDenoisingDiffusion
 # from metrics.molecular_metrics import TrainMolecularMetrics, SamplingMolecularMetrics
 # from metrics.molecular_metrics_discrete import TrainMolecularMetricsDiscrete
-from analysis.visualization import MolecularVisualization, NonMolecularVisualization
+# from analysis.visualization import MolecularVisualization, NonMolecularVisualization
+from analysis.visualization import NonMolecularVisualization
 from diffusion.extra_features import DummyExtraFeatures, ExtraFeatures
 # from diffusion.extra_features_molecular import ExtraMolecularFeatures
 
@@ -235,7 +236,7 @@ def main(cfg: DictConfig):
                       check_val_every_n_epoch=cfg.general.check_val_every_n_epochs,
                       fast_dev_run=cfg.general.name == 'debug',
                       strategy='ddp' if cfg.general.gpus > 1 else None,
-                      enable_progress_bar=False,
+                      enable_progress_bar=True,
                       callbacks=callbacks,
                       logger=[])
 
